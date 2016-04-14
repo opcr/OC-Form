@@ -58,14 +58,10 @@ Une documentation est tenu pour expliquer chaque fonctionnalité développée. N
 Pour contribuer au projet, veuillez suivre les instructions suivantes :
 
 1. Fork du projet
-`
-git clone https://github.com/opcr/OC-Form.git --recursive
-cd OC-Form
-`
+`git clone https://github.com/opcr/OC-Form.git --recursive`
+`cd OC-Form`
 2. Ajouter une branche distante
-```
-git remote add origin https://github.com/opcr/OC-Form.git
-```
+`git remote add origin https://github.com/opcr/OC-Form.git`
 3. Pull OC-Form repo
 ```
 git pull origin master
