@@ -65,18 +65,16 @@ Pour contribuer au projet, veuillez suivre les instructions suivantes :
 3. Pull OC-Form repo<br >
 `git pull origin master`<br >
 4. Créer votre propre branche de travail
-`git checkout -b username/option/name_branch
+`git checkout -b username/option/name_branch`<br >
+<br >
+`[option] : feat --> intégrer un groupe de fonctionnalité à OC-Form`<br >
+           `bug  --> bug dans le projet`<br >
+           `test --> tester une fonctionnalité`<br >
+<br >
+`exemple : git checkout -b Lmzd/feat/red_theme`<br >
 
-[option] :  feat --> intégrer un groupe de fonctionnalité à OC-Form
-            bug  --> bug dans le projet
-            test --> tester une fonctionnalité
-
-exemple : git checkout -b Lmzd/feat/red_theme
-`
-5. Push votre travail
-```
-git push origin username/option/name_branch
-```
+5. Push votre travail<br >
+`git push origin username/option/name_branch`<br >
 6. Pull request votre branche
 
 Veuillez mettre un titre claire et compréhensible avec une description de votre travail et l'importance de vos fonctionnalités à vos yeux.
