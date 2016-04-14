@@ -42,7 +42,7 @@ OC-Form/
 ├── contact-oc-form.php
 ├── post_contact.php
 ├── recaptcha.php
-└──README.md
+└── README.md
 
 ```
 ## Bugs et Demande de Fonctionnalités
@@ -62,17 +62,14 @@ Pour contribuer au projet, veuillez suivre les instructions suivantes :
 git clone https://github.com/opcr/OC-Form.git --recursive
 cd OC-Form
 ```
-
 2. Ajouter une branche distante
 ```
 git remote add origin https://github.com/opcr/OC-Form.git
 ```
-
 3. Pull OC-Form repo
 ```
 git pull origin master
 ```
-
 4. Créer votre propre branche de travail
 ```
 git checkout -b username/option/name_branch
@@ -83,12 +80,10 @@ git checkout -b username/option/name_branch
 
 exemple : git checkout -b Lmzd/feat/red_theme
 ```
-
 5. Push votre travail
 ```
 git push origin username/option/name_branch
 ```
-
 6. Pull request votre branche
 
 Veuillez mettre un titre claire et compréhensible avec une description de votre travail et l'importance de vos fonctionnalités à vos yeux.
