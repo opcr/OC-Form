@@ -42,10 +42,11 @@ OC-Form/
 ├── contact-oc-form.php
 ├── post_contact.php
 ├── recaptcha.php
+├── LICENSE
 └── README.md
 
 ```
-## Bugs et Demande de Fonctionnalités
+## Bugs et Demandes de Fonctionnalités
 
 Vous avez vu un bug ou vous désirez un nouvelle fonctionnalité? Rendez-vous dans les [issues de OC-Form](https://github.com/opcr/OC-Form/issues).
 
