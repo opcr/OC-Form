@@ -6,10 +6,10 @@ OC-Form est un projet commun entre 3 développeurs de la formation d'intégrateu
 
 ## Sommaire
 
-    * [Introduction](#Introduction)
-    * [Bugs et Demandes de Fonctionnalité](#Bugs-et-Demandes-de-Fonctionnalité)
-    * [Documentation](#Documentation)
-    * [Contribuer](#Contribuer)
+* [Introduction](#introduction)
+* [Bugs et Demandes de Fonctionnalité](#bugs-et-demandes-de-fonctionnalite)
+* [Documentation](#documentation)
+* [Contribuer](#contribuer)
  
 ## Introduction
 
