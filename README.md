@@ -42,3 +42,51 @@ OC-Form/
 └──README.md
 
 ```
+
+## Documentation
+
+Une documentation est tenu pour expliquer chaque fonctionnalité développée. Nous ne demandons pas d'écrire un livre pour chaqu'une de ces class mais juste de décrire son fonctionnement et ce qu'elle apporte aux développeurs.
+
+## Contribuer
+
+Pour contribuer au projet, veuillez suivre les instructions suivantes :
+
+1. Fork du projet
+```
+git clone https://github.com/opcr/OC-Form.git --recursive
+cd OC-Form
+```
+
+2. Ajouter une branche distante
+```
+git remote add origin https://github.com/opcr/OC-Form.git
+```
+
+3. Pull OC-Form repo
+```
+git pull origin master
+```
+
+4. Créer votre propre branche de travail
+```
+git checkout -b username/option/name_branch
+
+[option] :  feat --> intégrer un groupe de fonctionnalité à OC-Form
+            bug  --> bug dans le projet
+            test --> tester une fonctionnalité
+
+exemple : git checkout -b Lmzd/feat/red_theme
+```
+
+5. Push votre travail
+```
+git push origin username/option/name_branch
+```
+
+6. Pull request votre branche
+
+Veuillez mettre un titre claire et compréhensible avec une description de votre travail et l'importance de vos fonctionnalités à vos yeux.
+
+
+Merci de respecter tout ces points.
+
