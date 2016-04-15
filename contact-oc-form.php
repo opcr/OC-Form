@@ -98,6 +98,53 @@
 								<input name="adressmail" type="email" data-validation="email" data-validation-error-msg="Veuillez saisit votre adresse mail" required="required" class="form-control" id="adressmail" placeholder="Votre email" tabindex="3" title="Veuillez saisir votre email" autocomplete="on" value="<?= isset($_SESSION['inputs']['adressmail']) ? $_SESSION['inputs']['adressmail'] : ''; ?>">
 							</div>
 						</div>
+						
+												
+						
+
+						<div class="row">
+								<div class="col-xs-6 form-group">
+									<label>
+										<input type="radio" name="sexe" value="homme" id="sexe-home">
+										Homme</label>
+									<label>
+										<input type="radio" name="sexe" value="Femme" id="sexe-femme">
+										Femme</label>
+									</div>
+									
+							<div class="col-xs-6 form-group">
+								<p>
+									<label>
+										<input type="checkbox" name="alimentation" value="viande" id="alimentation_0">
+										viande</label>
+									<br>
+									<label>
+										<input type="checkbox" name="alimentation" value="fruit" id="alimentation_1">
+										fruit</label>
+									<br>
+									<label>
+										<input type="checkbox" name="alimentation" value="legumes" id="alimentation_2">
+										legumes</label>
+									<br>
+								</p>
+							</div>
+						</div>
+						
+					
+						
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 form-group">
+								<label class="control-label" for="service">Qui souhaitez-vous contacter ? <span class="glyphicon glyphicon-asterisk"></span></label>
+								<select name="destinataire" required id="destinataire">
+									<option selected="selected">choisissez...</option>
+									<option value="admin@dvwdesign.ch">Administration</option>
+									<option value="sav@dvwdesign.ch">Service après-vente</option>
+									<option value="info@dvwdesign.ch">Informations</option>
+								</select>
+							</div>
+						</div>
+
+						
 						<div class="row">
 							<div class="col-xs-12 form-group">
 								<label class="control-label" for="message">Message <span class="glyphicon glyphicon-asterisk"></span></label>
