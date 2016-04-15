@@ -13,6 +13,14 @@ if(!array_key_exists('adressmail', $_POST) || $_POST['adressmail'] == '' || !fil
 	$errors['adressmail'] = "Veuillez saisir un e-mail valide";
 }
 
+if(!array_key_exists('sexe', $_POST) || $_POST['sexe'] == ''){
+	$errors['sexe'] = "Veuillez entrer votre sexe";
+}
+
+if(!array_key_exists('alimentation', $_POST) || $_POST['alimentation'] == ''){
+	$errors['alimentation'] = "Veuillez entrer votre alimentation";
+}
+
 if(!array_key_exists('message', $_POST) || $_POST['message'] == ''){
 	$errors['message'] = "Veuillez saisir un message";
 }
@@ -32,6 +40,8 @@ if(!empty($errors)){
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
 	$adressmail = $_POST['adressmail'];
+    $sexe=$_POST['sexe'];
+    $alimentation=$_POST['alimentation']
 	$message = $_POST['message'];
 	$headers = "From: \"$firstname $lastname\" <$adressmail>\r\n";
 	$headers .="Reply-To: $adressmail";
