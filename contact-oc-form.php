@@ -76,7 +76,7 @@
 		</div>
 	</div>
 	<div class="row">
-			<div class="col-xs-11 col-xs-centered col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+			<div class="col-xs-10 col-xs-offset-1 col-lg-8 col-lg-offset-2">
 				<h2>Formulaire</h2>
 				<form id="formulaire" action="post_contact.php" method="post" class="row">
 					<div class="col-xs-12">
