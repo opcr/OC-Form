@@ -40,8 +40,8 @@ if(!empty($errors)){
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
 	$adressmail = $_POST['adressmail'];
-    $sexe=$_POST['sexe'];
-    $alimentation=$_POST['alimentation']
+    $sexe = $_POST['sexe'];
+    $alimentation = $_POST['alimentation'];
 	$message = $_POST['message'];
 	$headers = "From: \"$firstname $lastname\" <$adressmail>\r\n";
 	$headers .="Reply-To: $adressmail";
