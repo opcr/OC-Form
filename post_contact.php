@@ -6,6 +6,8 @@ if(!array_key_exists('civilite', $_POST) || $_POST['civilite'] == ''){
 
 //SI RIEN N'EST RENSEIGNE AU NIVEAU DU PRENOM--> MESSAGE D'ERREUR
 
+//SI RIEN N'EST RENSEIGNE AU NIVEAU DU PRENOM--> MESSAGE D'ERREUR
+
 if(!array_key_exists('firstname', $_POST) || $_POST['firstname'] == ''){
 	$errors['firstname'] = "Veuillez saisir votre prénom";
 }
@@ -22,6 +24,7 @@ if(!array_key_exists('adressmail', $_POST) || $_POST['adressmail'] == '' || !fil
 	$errors['adressmail'] = "Veuillez saisir un e-mail valide";
 }
 
+<<<<<<< HEAD
 <<<<<<< a454b4cbf5e8427fcc1100419ec71fb0d226ab50
 if(!array_key_exists('phone', $_POST) || $_POST['phone'] == ''){
 	$errors['phone'] = "Veuillez saisir votre numéro de téléphone";
@@ -32,6 +35,9 @@ if(!array_key_exists('alimentation', $_POST) || $_POST['alimentation'] == ''){
 =======
 // SI LE MESSAGE N'EST PAS RENSEIGNE --> MESSAGE D'ERREUR
 >>>>>>> ajouts de commentaires au fichier post_contact.php
+=======
+// SI LE MESSAGE N'EST PAS RENSEIGNE --> MESSAGE D'ERREUR
+>>>>>>> 7886f4a79e7b44dd5de71725bb614ac60ad6f1b2
 
 if(!array_key_exists('message', $_POST) || $_POST['message'] == ''){
 	$errors['message'] = "Veuillez saisir un message";
@@ -58,10 +64,13 @@ else{
 	//ADRESSE MAIL QUE VOUS SOUHAITEZ:
 	$mailto = "info@dvwdesign.ch";
 	
+<<<<<<< HEAD
 <<<<<<< a454b4cbf5e8427fcc1100419ec71fb0d226ab50
 	$civilite = $_POST['civilite'];
 =======
 >>>>>>> ajouts de commentaires au fichier post_contact.php
+=======
+>>>>>>> 7886f4a79e7b44dd5de71725bb614ac60ad6f1b2
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
 	$adressmail = $_POST['adressmail'];
