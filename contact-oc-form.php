@@ -87,64 +87,101 @@
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1 col-lg-8 col-lg-offset-2">
 			<h2>Formulaire</h2>
-			<form id="formulaire" action="post_contact.php" method="post" class="col-xs-12">
+			<form id="formulaire" action="post_contact.php" method="post">
 				<div class="row">
+					<div class="col-xs-12 form-group">
+						<label for="civilite-homme" class="radio-inline">
+							<input type="radio" name="civilite" id="civilite-homme" value="monsieur<?php if($_POST['civilite']=="monsieur") { echo'checked="checked"';}?>">Monsieur
+						</label>
+						<label for="civilite-femme" class="radio-inline">
+						  <input type="radio" name="civilite" id="civilite-femme" value="madame<?php if($_POST['civilite']=="madame") { echo'checked="checked"';}?>">Madame
+						</label>
+					</div>
 					<div class="col-xs-12 col-sm-6 form-group">
 						<label class="control-label" for="firstname">Prénom <span class="glyphicon glyphicon-asterisk"></span></label>
-						<input name="firstname" type="text" data-validation="alphanumeric" data-validation-error-msg="Veuillez saisir votre Prénom" required="required" autofocus class="form-control" id="firstname" placeholder="Votre Prénom" tabindex="1" title="Veuillez saisir votre prénom" autocomplete="on" value="<?= isset($_SESSION['inputs']['firstname']) ? $_SESSION['inputs']['firstname'] : ''; ?>">
-						<div class="has_error"></div>
+						<input name="firstname" id="firstname" class="form-control" type="text" required="required" autofocus placeholder="Votre Prénom" tabindex="1" title="Veuillez saisir votre prénom" autocomplete="on" value="<?= isset($_SESSION['inputs']['firstname']) ? $_SESSION['inputs']['firstname'] : ''; ?>">
 					</div>
 					<div class="col-xs-12 col-sm-6 form-group">
 						<label class="control-label" for="lastname">Nom <span class="glyphicon glyphicon-asterisk"></span></label>
-						<input name="lastname" type="text" data-validation="alphanumeric" data-validation-error-msg="Veuillez saisir votre nom de famille" required="required" class="form-control" id="lastname" placeholder="Votre nom" tabindex="2" title="Veuillez saisir votre nom" autocomplete="on" value="<?= isset($_SESSION['inputs']['lastname']) ? $_SESSION['inputs']['lastname'] : ''; ?>">
-						<div class="has_error"></div>
+						<input name="lastname" id="lastname"class="form-control"  type="text" required="required" placeholder="Votre nom" tabindex="2" title="Veuillez saisir votre nom" autocomplete="on" value="<?= isset($_SESSION['inputs']['lastname']) ? $_SESSION['inputs']['lastname'] : ''; ?>">
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 form-group">
 						<label class="control-label" for="adressmail">Adresse e-mail <span class="glyphicon glyphicon-asterisk"></span></label>
-						<input name="adressmail" type="email" data-validation="email" data-validation-error-msg="Veuillez saisit votre adresse mail" required="required" class="form-control" id="adressmail" placeholder="Votre email" tabindex="3" title="Veuillez saisir votre email" autocomplete="on" value="<?= isset($_SESSION['inputs']['adressmail']) ? $_SESSION['inputs']['adressmail'] : ''; ?>">
+						<input name="adressmail" id="adressmail" class="form-control" type="email" required="required" placeholder="Votre email" tabindex="3" title="Veuillez saisir votre email" autocomplete="on" value="<?= isset($_SESSION['inputs']['adressmail']) ? $_SESSION['inputs']['adressmail'] : ''; ?>">
+					</div>
+					<div class="col-xs-12 col-sm-6 form-group">
+						<label class="control-label" for="phone">N° de Téléphone</label>
+						<input name="phone" id="phone" class="form-control" type="tel" placeholder="Votre numéro de téléphone" tabindex="4" title="Veuillez saisir votre numéro de téléphone" autocomplete="on" value="<?= isset($_SESSION['inputs']['phone']) ? $_SESSION['inputs']['phone'] : ''; ?>">
+					</div>
+					<div class="col-xs-8 col-sm-4 form-group">
+						<label class="control-label" for="road">Rue <span class="glyphicon glyphicon-asterisk"></span></label>
+						<input name="road" id="road" class="form-control" type="text" required="required" autofocus placeholder="Votre rue" tabindex="1" title="Veuillez saisir votre rue" autocomplete="on" value="<?= isset($_SESSION['inputs']['road']) ? $_SESSION['inputs']['road'] : ''; ?>">
+					</div>
+					<div class="col-xs-4 col-sm-2 form-group">
+						<label class="control-label" for="roadnumber">N°<span class="glyphicon glyphicon-asterisk"></span></label>
+						<input name="roadnumber" id="roadnumber" class="form-control" type="text" required="required" autofocus placeholder="N°" tabindex="1" title="Veuillez saisir le numéro de votre immeuble" autocomplete="on" value="<?= isset($_SESSION['inputs']['roadnumber']) ? $_SESSION['inputs']['roadnumber'] : ''; ?>">
+					</div>
+					<div class="col-xs-4 col-sm-2 form-group">
+						<label class="control-label" for="codepostal">CP<span class="glyphicon glyphicon-asterisk"></span></label>
+						<input name="codepostal" id="codepostal" class="form-control" type="number" required="required" autofocus placeholder="Code Postal" tabindex="1" title="Veuillez saisir le code postal de votre ville" autocomplete="on" value="<?= isset($_SESSION['inputs']['codepostal']) ? $_SESSION['inputs']['codepostal'] : ''; ?>">
+					</div>
+					<div class="col-xs-8 col-sm-4 form-group">
+						<label class="control-label" for="city">Ville <span class="glyphicon glyphicon-asterisk"></span></label>
+						<input name="city" id="city" class="form-control" type="text" required="required" autofocus placeholder="Votre Ville" tabindex="1" title="Veuillez saisir votre localité" autocomplete="on" value="<?= isset($_SESSION['inputs']['city']) ? $_SESSION['inputs']['city'] : ''; ?>">
+					</div>
+
+					<div class="col-xs-12 col-sm-6 form-group">
+						<label class="control-label" for="naissance">Votre date de naissance</label>
+						<input name="naissance" id="naissance" class="form-control" type="date" placeholder="JJ.MM.AAAA" tabindex="5" title="Veuillez saisir votre date de naissance" autocomplete="on" value="<?= isset($_SESSION['inputs']['naissance']) ? $_SESSION['inputs']['naissance'] : ''; ?>">
+					</div>
+
+					<div class="col-xs-12 col-sm-6 form-group">
+						<label class="control-label" for="website">Votre site web</label>
+						<div class="input-group">
+							<span class="input-group-addon">http://</span>
+							<input name="website" id="website" class="form-control" type="url" placeholder="Votre site web" tabindex="5" title="Veuillez saisir votre site web si vous en avez un" autocomplete="on" value="<?= isset($_SESSION['inputs']['website']) ? $_SESSION['inputs']['website'] : ''; ?>">
+						</div>
 					</div>
 				</div>
-
+				
 				<div class="row">
-					<div class="col-xs-6">
-						<label class="radio-inline">
-							<input type="radio" name="sexe" id="sexe-home" value="homme">Homme
-						</label>
-						<label class="radio-inline">
-						  <input type="radio" name="sexe" d="sexe-femme" value="Femme">Femme
-						</label>
-					</div>
 					
 					<div class="col-xs-6">
+						<p><strong>Quelle est votre alimentation ?</strong></p>
 						<div class="checkbox">
 						  <label>
-							 <input type="checkbox" value="">
-							 Option one is this and that&mdash;be sure to include why it's great
+							 <input type="checkbox" name="alimentation" value="Viande<?php if($_POST['alimentation']=="Viande") { echo'checked="checked"';}?>">
+							 Viande
 						  </label>
 						</div>
 						<div class="checkbox">
 						  <label>
-							 <input type="checkbox" value="">
-							 Option one is this and that&mdash;be sure to include why it's great
+							 <input type="checkbox" name="alimentation" value="Légumes<?php if($_POST['Légumes']=="oui") { echo'checked="checked"';}?>">
+							 légumes
 						  </label>
 						</div>
 						<div class="checkbox">
 						  <label>
-							 <input type="checkbox" value="">
-							 Option one is this and that&mdash;be sure to include why it's great
+							 <input type="checkbox" name="alimentation" value="Fruits<?php if($_POST['alimentation']=="Fruits") { echo'checked="checked"';}?>">
+							 Fruits
 						  </label>
 						</div>
+					</div>
+					<div class="col-xs-6 form-group">
+						<label class="visible-xs-block visible-sm-block visible-md-block visible-lg-block" for="color">Quelle est votre couleur préférée ?</label>
+						<input name="color" id="color" type="color" value="<?= isset($_SESSION['inputs']['website']) ? $_SESSION['inputs']['website'] : ''; ?>">
 					</div>					
 				</div>
 				
-				
-				
+
+
+
 				<div class="row">
 				<div class="col-xs-12 col-sm-6 form-group">
 				<label class="control-label" for="service">Qui souhaitez-vous contacter ? <span class="glyphicon glyphicon-asterisk"></span></label>
-				<select name="destinataire" required id="destinataire">
+				<select class="form-control" name="destinataire" required id="destinataire">
 				<option selected="selected">choisissez...</option>
 				<option value="admin@dvwdesign.ch">Administration</option>
 				<option value="sav@dvwdesign.ch">Service après-vente</option>
