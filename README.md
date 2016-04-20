@@ -14,9 +14,9 @@ OC-Form est un projet commun entre 3 développeurs de la formation d'intégrateu
 ## Introduction
 
 OpenClassrooms est un site de cours en ligne. Chaque visiteur peut à la fois être un lecteur ou un rédacteur. Les cours peuvent être réalisés aussi bien par des membres, par l'équipe du site, ou éventuellement par des professeurs d'universités ou de grandes écoles partenaires. Initialement orientée autour de la programmation informatique, la plate-forme couvre depuis 2013 des thématiques plus larges tels que le marketing, l'entrepreneuriat et les sciences.
-Il propose ainsi des parcours qui regroupent plusieurs cours pour amener l'étudiant à un métier tel que Intégratuer Web, Développeur Front-En et Développeur Back-End. Pour ce projet, nous sommes 3 élèves du parcours Intégrateur Web.
+Il propose ainsi des parcours qui regroupent plusieurs cours pour amener l'étudiant à un métier tel que Intégrateur Web, Développeur Front-End et Développeur Back-End. Pour ce projet, nous sommes 3 élèves du parcours Intégrateur Web.
 
-Ce parcours nous forment à un métier à fort potentiel d'embauche. Nous avons décidé de créer un outil open source pour formulaire. Notre but sera de créer plusieurs thèmes pour que le design des formulaires web se fasse plus rapidement.
+Ce parcours nous forme à un métier à fort potentiel d'embauche. Nous avons décidé de créer un outil open source pour formulaire. Notre but sera de créer plusieurs thèmes pour que le design des formulaires web se fasse plus rapidement.
 
 ## Ce qui est inclus
 
@@ -52,7 +52,7 @@ Vous avez vu un bug ou vous désirez un nouvelle fonctionnalité? Rendez-vous da
 
 ## Documentation
 
-Une documentation est tenu pour expliquer chaque fonctionnalité développée. Nous ne demandons pas d'écrire un livre pour chaqu'une de ces class mais juste de décrire son fonctionnement et ce qu'elle apporte aux développeurs.
+Une documentation est tenue pour expliquer chaque fonctionnalité développée. Nous ne demandons pas d'écrire un livre pour chacune de ces "class" mais juste de décrire son fonctionnement et ce qu'elle apporte aux développeurs.
 
 ## Contribuer
 
