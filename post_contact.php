@@ -1,5 +1,8 @@
 <?php
 $errors = [];
+if(!array_key_exists('civilite', $_POST) || $_POST['civilite'] == ''){
+	$errors['civilite'] = "Veuillez spécifier votre \"Civilité\"";
+}
 
 //SI RIEN N'EST RENSEIGNE AU NIVEAU DU PRENOM--> MESSAGE D'ERREUR
 
@@ -19,7 +22,16 @@ if(!array_key_exists('adressmail', $_POST) || $_POST['adressmail'] == '' || !fil
 	$errors['adressmail'] = "Veuillez saisir un e-mail valide";
 }
 
+<<<<<<< HEAD
 // SI LE MESSAGE N'EST PAS RENSEIGNE --> MESSAGE D'ERREUR
+=======
+if(!array_key_exists('phone', $_POST) || $_POST['phone'] == ''){
+	$errors['phone'] = "Veuillez saisir votre numéro de téléphone";
+}
+if(!array_key_exists('alimentation', $_POST) || $_POST['alimentation'] == ''){
+	$errors['alimentation'] = "Veuillez entrer votre alimentation";
+}
+>>>>>>> Pataco80-test-multi-email-send
 
 if(!array_key_exists('message', $_POST) || $_POST['message'] == ''){
 	$errors['message'] = "Veuillez saisir un message";
@@ -46,11 +58,17 @@ else{
 	//ADRESSE MAIL QUE VOUS SOUHAITEZ:
 	$mailto = "info@dvwdesign.ch";
 	
+<<<<<<< HEAD
+=======
+	$civilite = $_POST['civilite'];
+>>>>>>> Pataco80-test-multi-email-send
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
 	$adressmail = $_POST['adressmail'];
+   $alimentation = $_POST['alimentation'];
 	$message = $_POST['message'];
-	$headers = "From: \"$firstname $lastname\" <$adressmail>\r\n";
+	
+	$headers = "From: $civilite \"$firstname $lastname\" <$adressmail>\r\n";
 	$headers .="Reply-To: $adressmail";
    mail($mailto, 'Formulaire de contact OC-Form', $message, $headers);
 }
