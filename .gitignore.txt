@@ -1,2 +1,2 @@
 dwsync.xml
-less/color.css
+color.css
