@@ -1,0 +1,16 @@
+section{
+    margin-top: 100px;
+}
+
+button{
+    height: 40px;
+}
+
+#red{
+    background-color: red;    
+}
+
+#red-ligth-1{
+    background-color: red-light-1;
+}
+
