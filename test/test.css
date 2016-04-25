@@ -1,16 +1,82 @@
-section{
-    margin-top: 100px;
+/* red color */
+/* red lighten */
+/* red darken */
+/* green color */
+/* green lighten */
+/* green darken */
+section {
+  margin-top: 50px;
+  margin: 100px 75px 50px 150px;
 }
-
-button{
-    height: 40px;
+button {
+  height: 30px;
+  width: 30px;
+  margin: 50px 10px 50px 10px;
 }
-
-#red{
-    background-color: red;    
+/******************************************************
+********************* RED COLOR ***********************
+*******************************************************/
+#red {
+  background-color: red;
 }
-
-#red-ligth-1{
-    background-color: red-light-1;
+/********************** light *************************/
+#red-light-1 {
+  background-color: #ff1414;
 }
-
+#red-light-2 {
+  background-color: #ff2929;
+}
+#red-light-3 {
+  background-color: #ff3d3d;
+}
+#red-light-4 {
+  background-color: #ff5252;
+}
+#red-light-5 {
+  background-color: #ff6666;
+}
+#red-light-6 {
+  background-color: #ff7a7a;
+}
+#red-light-7 {
+  background-color: #ff8f8f;
+}
+#red-light-8 {
+  background-color: #ffa3a3;
+}
+#red-light-9 {
+  background-color: #ffb8b8;
+}
+#red-light-10 {
+  background-color: #ffcccc;
+}
+#red-dark-1 {
+  background-color: #eb0000;
+}
+#red-dark-2 {
+  background-color: #d60000;
+}
+#red-dark-3 {
+  background-color: #c20000;
+}
+#red-dark-4 {
+  background-color: #ad0000;
+}
+#red-dark-5 {
+  background-color: #990000;
+}
+#red-dark-6 {
+  background-color: #850000;
+}
+#red-dark-7 {
+  background-color: #700000;
+}
+#red-dark-8 {
+  background-color: #5c0000;
+}
+#red-dark-9 {
+  background-color: #470000;
+}
+#red-dark-10 {
+  background-color: #330000;
+}
