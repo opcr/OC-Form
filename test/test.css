@@ -13,6 +13,18 @@
 /* purple color */
 /* purple lighten */
 /* purple darken */
+/* orange color */
+/* orange lighten */
+/* orange darken */
+/* cyan color */
+/* cyan lighten */
+/* cyan darken */
+/* lightgreen color */
+/* lightgreen lighten */
+/* lightgreen darken */
+/* grassgreen color */
+/* grassgreen lighten */
+/* grassgreen darken */
 section {
   margin-top: 50px;
   margin: 100px 110px 50px 110px;
@@ -29,65 +41,65 @@ button {
   background-color: red;
 }
 /********************** light *************************/
-#red-light-1 {
+#red-lt-1 {
   background-color: #ff1414;
 }
-#red-light-2 {
+#red-lt-2 {
   background-color: #ff2929;
 }
-#red-light-3 {
+#red-lt-3 {
   background-color: #ff3d3d;
 }
-#red-light-4 {
+#red-lt-4 {
   background-color: #ff5252;
 }
-#red-light-5 {
+#red-lt-5 {
   background-color: #ff6666;
 }
-#red-light-6 {
+#red-lt-6 {
   background-color: #ff7a7a;
 }
-#red-light-7 {
+#red-lt-7 {
   background-color: #ff8f8f;
 }
-#red-light-8 {
+#red-lt-8 {
   background-color: #ffa3a3;
 }
-#red-light-9 {
+#red-lt-9 {
   background-color: #ffb8b8;
 }
-#red-light-10 {
+#red-lt-10 {
   background-color: #ffcccc;
 }
 /********************** Dark *************************/
-#red-dark-1 {
+#red-dk-1 {
   background-color: #eb0000;
 }
-#red-dark-2 {
+#red-dk-2 {
   background-color: #d60000;
 }
-#red-dark-3 {
+#red-dk-3 {
   background-color: #c20000;
 }
-#red-dark-4 {
+#red-dk-4 {
   background-color: #ad0000;
 }
-#red-dark-5 {
+#red-dk-5 {
   background-color: #990000;
 }
-#red-dark-6 {
+#red-dk-6 {
   background-color: #850000;
 }
-#red-dark-7 {
+#red-dk-7 {
   background-color: #700000;
 }
-#red-dark-8 {
+#red-dk-8 {
   background-color: #5c0000;
 }
-#red-dark-9 {
+#red-dk-9 {
   background-color: #470000;
 }
-#red-dark-10 {
+#red-dk-10 {
   background-color: #330000;
 }
 /******************************************************
@@ -97,64 +109,64 @@ button {
   background-color: #00FF00;
 }
 /********************** Dark *************************/
-#green-light-1 {
+#green-lt-1 {
   background-color: #14ff14;
 }
-#green-light-2 {
+#green-lt-2 {
   background-color: #29ff29;
 }
-#green-light-3 {
+#green-lt-3 {
   background-color: #3dff3d;
 }
-#green-light-4 {
+#green-lt-4 {
   background-color: #52ff52;
 }
-#green-light-5 {
+#green-lt-5 {
   background-color: #66ff66;
 }
-#green-light-6 {
+#green-lt-6 {
   background-color: #7aff7a;
 }
-#green-light-7 {
+#green-lt-7 {
   background-color: #8fff8f;
 }
-#green-light-8 {
+#green-lt-8 {
   background-color: #a3ffa3;
 }
-#green-light-9 {
+#green-lt-9 {
   background-color: #b8ffb8;
 }
-#green-light-10 {
+#green-lt-10 {
   background-color: #ccffcc;
 }
-#green-dark-1 {
+#green-dk-1 {
   background-color: #00eb00;
 }
-#green-dark-2 {
+#green-dk-2 {
   background-color: #00d600;
 }
-#green-dark-3 {
+#green-dk-3 {
   background-color: #00c200;
 }
-#green-dark-4 {
+#green-dk-4 {
   background-color: #00ad00;
 }
-#green-dark-5 {
+#green-dk-5 {
   background-color: #009900;
 }
-#green-dark-6 {
+#green-dk-6 {
   background-color: #008500;
 }
-#green-dark-7 {
+#green-dk-7 {
   background-color: #007000;
 }
-#green-dark-8 {
+#green-dk-8 {
   background-color: #005c00;
 }
-#green-dark-9 {
+#green-dk-9 {
   background-color: #004700;
 }
-#green-dark-10 {
+#green-dk-10 {
   background-color: #003300;
 }
 /******************************************************
@@ -164,64 +176,65 @@ button {
   background-color: #0000FF;
 }
 /********************** Dark *************************/
-#blue-light-1 {
+#blue-lt-1 {
   background-color: #1414ff;
 }
-#blue-light-2 {
+#blue-lt-2 {
   background-color: #2929ff;
 }
-#blue-light-3 {
+#blue-lt-3 {
   background-color: #3d3dff;
 }
-#blue-light-4 {
+#blue-lt-4 {
   background-color: #5252ff;
 }
-#blue-light-5 {
+#blue-lt-5 {
   background-color: #6666ff;
 }
-#blue-light-6 {
+#blue-lt-6 {
   background-color: #7a7aff;
 }
-#blue-light-7 {
+#blue-lt-7 {
   background-color: #8f8fff;
 }
-#blue-light-8 {
+#blue-lt-8 {
   background-color: #a3a3ff;
 }
-#blue-light-9 {
+#blue-lt-9 {
   background-color: #b8b8ff;
 }
-#blue-light-10 {
+#blue-lt-10 {
   background-color: #ccccff;
 }
-#blue-dark-1 {
+/* blue darken*/
+#blue-dk-1 {
   background-color: #0000eb;
 }
-#blue-dark-2 {
+#blue-dk-2 {
   background-color: #0000d6;
 }
-#blue-dark-3 {
+#blue-dk-3 {
   background-color: #0000c2;
 }
-#blue-dark-4 {
+#blue-dk-4 {
   background-color: #0000ad;
 }
-#blue-dark-5 {
+#blue-dk-5 {
   background-color: #000099;
 }
-#blue-dark-6 {
+#blue-dk-6 {
   background-color: #000085;
 }
-#blue-dark-7 {
+#blue-dk-7 {
   background-color: #000070;
 }
-#blue-dark-8 {
+#blue-dk-8 {
   background-color: #00005c;
 }
-#blue-dark-9 {
+#blue-dk-9 {
   background-color: #000047;
 }
-#blue-dark-10 {
+#blue-dk-10 {
   background-color: #000033;
 }
 /******************************************************
@@ -231,64 +244,64 @@ button {
   background-color: #FCFC00;
 }
 /********************** Dark *************************/
-#yellow-light-1 {
+#yellow-lt-1 {
   background-color: #ffff11;
 }
-#yellow-light-2 {
+#yellow-lt-2 {
   background-color: #ffff26;
 }
-#yellow-light-3 {
+#yellow-lt-3 {
   background-color: #ffff3a;
 }
-#yellow-light-4 {
+#yellow-lt-4 {
   background-color: #ffff4f;
 }
-#yellow-light-5 {
+#yellow-lt-5 {
   background-color: #ffff63;
 }
-#yellow-light-6 {
+#yellow-lt-6 {
   background-color: #ffff77;
 }
-#yellow-light-7 {
+#yellow-lt-7 {
   background-color: #ffff8c;
 }
-#yellow-light-8 {
+#yellow-lt-8 {
   background-color: #ffffa0;
 }
-#yellow-light-9 {
+#yellow-lt-9 {
   background-color: #ffffb5;
 }
-#yellow-light-10 {
+#yellow-lt-10 {
   background-color: #ffffc9;
 }
-#yellow-dark-1 {
+#yellow-dk-1 {
   background-color: #e8e800;
 }
-#yellow-dark-2 {
+#yellow-dk-2 {
   background-color: #d3d300;
 }
-#yellow-dark-3 {
+#yellow-dk-3 {
   background-color: #bfbf00;
 }
-#yellow-dark-4 {
+#yellow-dk-4 {
   background-color: #aaaa00;
 }
-#yellow-dark-5 {
+#yellow-dk-5 {
   background-color: #969600;
 }
-#yellow-dark-6 {
+#yellow-dk-6 {
   background-color: #828200;
 }
-#yellow-dark-7 {
+#yellow-dk-7 {
   background-color: #6d6d00;
 }
-#yellow-dark-8 {
+#yellow-dk-8 {
   background-color: #595900;
 }
-#yellow-dark-9 {
+#yellow-dk-9 {
   background-color: #444400;
 }
-#yellow-dark-10 {
+#yellow-dk-10 {
   background-color: #303000;
 }
 /******************************************************
@@ -298,63 +311,331 @@ button {
   background-color: #FC00FC;
 }
 /********************** Dark *************************/
-#purple-light-1 {
+#purple-lt-1 {
   background-color: #ff11ff;
 }
-#purple-light-2 {
+#purple-lt-2 {
   background-color: #ff26ff;
 }
-#purple-light-3 {
+#purple-lt-3 {
   background-color: #ff3aff;
 }
-#purple-light-4 {
+#purple-lt-4 {
   background-color: #ff4fff;
 }
-#purple-light-5 {
+#purple-lt-5 {
   background-color: #ff63ff;
 }
-#purple-light-6 {
+#purple-lt-6 {
   background-color: #ff77ff;
 }
-#purple-light-7 {
+#purple-lt-7 {
   background-color: #ff8cff;
 }
-#purple-light-8 {
+#purple-lt-8 {
   background-color: #ffa0ff;
 }
-#purple-light-9 {
+#purple-lt-9 {
   background-color: #ffb5ff;
 }
-#purple-light-10 {
+#purple-lt-10 {
   background-color: #ffc9ff;
 }
-#purple-dark-1 {
+#purple-dk-1 {
   background-color: #e800e8;
 }
-#purple-dark-2 {
+#purple-dk-2 {
   background-color: #d300d3;
 }
-#purple-dark-3 {
+#purple-dk-3 {
   background-color: #bf00bf;
 }
-#purple-dark-4 {
+#purple-dk-4 {
   background-color: #aa00aa;
 }
-#purple-dark-5 {
+#purple-dk-5 {
   background-color: #960096;
 }
-#purple-dark-6 {
+#purple-dk-6 {
   background-color: #820082;
 }
-#purple-dark-7 {
+#purple-dk-7 {
   background-color: #6d006d;
 }
-#purple-dark-8 {
+#purple-dk-8 {
   background-color: #590059;
 }
-#purple-dark-9 {
+#purple-dk-9 {
   background-color: #440044;
 }
-#purple-dark-10 {
+#purple-dk-10 {
   background-color: #300030;
+}
+/******************************************************
+********************* orange COLOR ***********************
+*******************************************************/
+#orange {
+  background-color: #FFA500;
+}
+/********************** Dark *************************/
+#orange-lt-1 {
+  background-color: #ffac14;
+}
+#orange-lt-2 {
+  background-color: #ffb329;
+}
+#orange-lt-3 {
+  background-color: #ffbb3d;
+}
+#orange-lt-4 {
+  background-color: #ffc252;
+}
+#orange-lt-5 {
+  background-color: #ffc966;
+}
+#orange-lt-6 {
+  background-color: #ffd07a;
+}
+#orange-lt-7 {
+  background-color: #ffd78f;
+}
+#orange-lt-8 {
+  background-color: #ffdfa3;
+}
+#orange-lt-9 {
+  background-color: #ffe6b8;
+}
+#orange-lt-10 {
+  background-color: #ffedcc;
+}
+#orange-dk-1 {
+  background-color: #eb9800;
+}
+#orange-dk-2 {
+  background-color: #d68b00;
+}
+#orange-dk-3 {
+  background-color: #c27d00;
+}
+#orange-dk-4 {
+  background-color: #ad7000;
+}
+#orange-dk-5 {
+  background-color: #996300;
+}
+#orange-dk-6 {
+  background-color: #855600;
+}
+#orange-dk-7 {
+  background-color: #704900;
+}
+#orange-dk-8 {
+  background-color: #5c3b00;
+}
+#orange-dk-9 {
+  background-color: #472e00;
+}
+#orange-dk-10 {
+  background-color: #332100;
+}
+/******************************************************
+********************* cyan COLOR ***********************
+*******************************************************/
+#cyan {
+  background-color: #00BDFC;
+}
+/********************** Dark *************************/
+#cyan-lt-1 {
+  background-color: #11c4ff;
+}
+#cyan-lt-2 {
+  background-color: #26c9ff;
+}
+#cyan-lt-3 {
+  background-color: #3aceff;
+}
+#cyan-lt-4 {
+  background-color: #4fd3ff;
+}
+#cyan-lt-5 {
+  background-color: #63d8ff;
+}
+#cyan-lt-6 {
+  background-color: #77ddff;
+}
+#cyan-lt-7 {
+  background-color: #8ce2ff;
+}
+#cyan-lt-8 {
+  background-color: #a0e7ff;
+}
+#cyan-lt-9 {
+  background-color: #b5ecff;
+}
+#cyan-lt-10 {
+  background-color: #c9f2ff;
+}
+#cyan-dk-1 {
+  background-color: #00aee8;
+}
+#cyan-dk-2 {
+  background-color: #009ed3;
+}
+#cyan-dk-3 {
+  background-color: #008fbf;
+}
+#cyan-dk-4 {
+  background-color: #0080aa;
+}
+#cyan-dk-5 {
+  background-color: #007196;
+}
+#cyan-dk-6 {
+  background-color: #006182;
+}
+#cyan-dk-7 {
+  background-color: #00526d;
+}
+#cyan-dk-8 {
+  background-color: #004359;
+}
+#cyan-dk-9 {
+  background-color: #003344;
+}
+#cyan-dk-10 {
+  background-color: #002430;
+}
+/******************************************************
+********************* lightgreen COLOR ***********************
+*******************************************************/
+#lightgreen {
+  background-color: #A0FC00;
+}
+/********************** Dark *************************/
+#lightgreen-lt-1 {
+  background-color: #a8ff11;
+}
+#lightgreen-lt-2 {
+  background-color: #b0ff26;
+}
+#lightgreen-lt-3 {
+  background-color: #b7ff3a;
+}
+#lightgreen-lt-4 {
+  background-color: #bfff4f;
+}
+#lightgreen-lt-5 {
+  background-color: #c6ff63;
+}
+#lightgreen-lt-6 {
+  background-color: #cdff77;
+}
+#lightgreen-lt-7 {
+  background-color: #d5ff8c;
+}
+#lightgreen-lt-8 {
+  background-color: #dcffa0;
+}
+#lightgreen-lt-9 {
+  background-color: #e4ffb5;
+}
+#lightgreen-lt-10 {
+  background-color: #ebffc9;
+}
+#lightgreen-dk-1 {
+  background-color: #93e800;
+}
+#lightgreen-dk-2 {
+  background-color: #86d300;
+}
+#lightgreen-dk-3 {
+  background-color: #79bf00;
+}
+#lightgreen-dk-4 {
+  background-color: #6caa00;
+}
+#lightgreen-dk-5 {
+  background-color: #5f9600;
+}
+#lightgreen-dk-6 {
+  background-color: #528200;
+}
+#lightgreen-dk-7 {
+  background-color: #456d00;
+}
+#lightgreen-dk-8 {
+  background-color: #385900;
+}
+#lightgreen-dk-9 {
+  background-color: #2b4400;
+}
+#lightgreen-dk-10 {
+  background-color: #1e3000;
+}
+/******************************************************
+********************* grassgreen COLOR ***********************
+*******************************************************/
+#grassgreen {
+  background-color: #1EA312;
+}
+/********************** Dark *************************/
+#grassgreen-lt-1 {
+  background-color: #21b514;
+}
+#grassgreen-lt-2 {
+  background-color: #25c816;
+}
+#grassgreen-lt-3 {
+  background-color: #28da18;
+}
+#grassgreen-lt-4 {
+  background-color: #31e620;
+}
+#grassgreen-lt-5 {
+  background-color: #42e833;
+}
+#grassgreen-lt-6 {
+  background-color: #53ea45;
+}
+#grassgreen-lt-7 {
+  background-color: #64ec57;
+}
+#grassgreen-lt-8 {
+  background-color: #75ef6a;
+}
+#grassgreen-lt-9 {
+  background-color: #86f17c;
+}
+#grassgreen-lt-10 {
+  background-color: #97f38e;
+}
+#grassgreen-dk-1 {
+  background-color: #1b9110;
+}
+#grassgreen-dk-2 {
+  background-color: #177e0e;
+}
+#grassgreen-dk-3 {
+  background-color: #146c0c;
+}
+#grassgreen-dk-4 {
+  background-color: #105a0a;
+}
+#grassgreen-dk-5 {
+  background-color: #0d4708;
+}
+#grassgreen-dk-6 {
+  background-color: #0a3506;
+}
+#grassgreen-dk-7 {
+  background-color: #062204;
+}
+#grassgreen-dk-8 {
+  background-color: #031002;
+}
+#grassgreen-dk-9 {
+  background-color: #000000;
+}
+#grassgreen-dk-10 {
+  background-color: #000000;
 }
