@@ -1,5 +1,12 @@
 <?php
+$mailadmin = 'admin@dvwdesign.ch';
+$mailservicevente = 'service-vente@dvwdesign.ch';
+$mailinfo = 'info@dvwdesign.ch';
+
+$mailto = [$mailadmin, $mailservicevente, $mailinfo];
+
 $errors = [];
+
 if(!array_key_exists('civilite', $_POST) || $_POST['civilite'] == ''){
 	$errors['civilite'] = "Veuillez spécifier votre \"Civilité\"";
 }
@@ -30,7 +37,14 @@ if(!array_key_exists('alimentation', $_POST) || $_POST['alimentation'] == ''){
 	$errors['alimentation'] = "Veuillez entrer votre alimentation";
 }
 
+<<<<<<< HEAD
 // SI LE MESSAGE N'EST PAS RENSEIGNE --> MESSAGE D'ERREUR
+=======
+if(!array_key_exists('destinataire', $_POST) || !isset($mailto[$_POST['destinataire']])){
+	$errors['destinataire'] = "Veuillez choisir le service à contacter";
+}
+
+>>>>>>> Pataco80-test-multi-email-send
 if(!array_key_exists('message', $_POST) || $_POST['message'] == ''){
 	$errors['message'] = "Veuillez saisir un message";
 }
@@ -52,6 +66,10 @@ if(!empty($errors)){
 else{
 	header('location: contact-oc-form.php');
 	$_SESSION['success'] = 1;
+<<<<<<< HEAD
+=======
+	$mailto = $_POST['destinataire'];
+>>>>>>> Pataco80-test-multi-email-send
 	
 	//ADRESSE MAIL QUE VOUS SOUHAITEZ:
 	$mailto = "info@dvwdesign.ch";
@@ -64,6 +82,10 @@ else{
 	$message = $_POST['message'];
 	$headers = "From: $civilite \"$firstname $lastname\" <$adressmail>\r\n";
 	$headers .="Reply-To: $adressmail";
+<<<<<<< HEAD
     mail($mailto, 'Formulaire de contact OC-Form', $message, $headers);
+=======
+   mail($mailto[$_POST['destinataire']], 'Formulaire de contact OC-Form', $message, $headers);
+>>>>>>> Pataco80-test-multi-email-send
 }
 ?>
