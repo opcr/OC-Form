@@ -1,5 +1,12 @@
 <?php
+$mailadmin = 'admin@dvwdesign.ch';
+$mailservicevente = 'service-vente@dvwdesign.ch';
+$mailinfo = 'info@dvwdesign.ch';
+
+$mailto = [$mailadmin, $mailservicevente, $mailinfo];
+
 $errors = [];
+
 if(!array_key_exists('civilite', $_POST) || $_POST['civilite'] == ''){
 	$errors['civilite'] = "Veuillez spécifier votre \"Civilité\"";
 }
@@ -23,6 +30,10 @@ if(!array_key_exists('alimentation', $_POST) || $_POST['alimentation'] == ''){
 	$errors['alimentation'] = "Veuillez entrer votre alimentation";
 }
 
+if(!array_key_exists('destinataire', $_POST) || !isset($mailto[$_POST['destinataire']])){
+	$errors['destinataire'] = "Veuillez choisir le service à contacter";
+}
+
 if(!array_key_exists('message', $_POST) || $_POST['message'] == ''){
 	$errors['message'] = "Veuillez saisir un message";
 }
@@ -38,7 +49,7 @@ if(!empty($errors)){
 }else{
 	header('location: contact-oc-form.php');
 	$_SESSION['success'] = 1;
-	$mailto = "info@dvwdesign.ch";
+	$mailto = $_POST['destinataire'];
 	
 	$civilite = $_POST['civilite'];
 	$firstname = $_POST['firstname'];
@@ -49,6 +60,6 @@ if(!empty($errors)){
 	
 	$headers = "From: $civilite \"$firstname $lastname\" <$adressmail>\r\n";
 	$headers .="Reply-To: $adressmail";
-   mail($mailto, 'Formulaire de contact OC-Form', $message, $headers);
+   mail($mailto[$_POST['destinataire']], 'Formulaire de contact OC-Form', $message, $headers);
 }
 ?>
