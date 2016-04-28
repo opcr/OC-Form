@@ -203,21 +203,21 @@
 						<div class="checkbox">
 							<!-- case à cocher viande avec la vérification qu'elle est bien renseignée-->
 						  <label>
-							 <input type="checkbox" name="alimentation" value="Viande<?php if($_POST['alimentation']=="Viande") { echo'checked="checked"';}?>">
+							 <input type="checkbox" name="alimentation" value="Viande" <?= isset($_SESSION['inputs']['alimentation']) && $_SESSION['inputs']['alimentation'] == 'Viande' ? checked : ''; ?>>
 							 Viande
 						  </label>
 						</div>
 							<!-- case à cocher légumes avec la vérification qu'elle est bien renseignée-->
 						<div class="checkbox">
 						  <label>
-							 <input type="checkbox" name="alimentation" value="Légumes" <?php if($_POST['alimentation']=="Viande") { echo'checked="checked"';}?>>
+							 <input type="checkbox" name="alimentation" value="Legumes" <?= isset($_SESSION['inputs']['alimentation']) && $_SESSION['inputs']['alimentation'] == 'Legumes' ? checked : ''; ?>>
 							 légumes
 						  </label>
 						</div>
 						<div class="checkbox">
 							<!-- case à cocher fruit avec la vérification qu'elle est bien renseignée-->
 						  <label>
-							 <input type="checkbox" name="alimentation" value="Fruits<?php if($_POST['alimentation']=="Fruits") { echo'checked="checked"';}?>">
+							 <input type="checkbox" name="alimentation" value="Fruits" <?= isset($_SESSION['inputs']['alimentation']) && $_SESSION['inputs']['alimentation'] == 'Fruits' ? checked : ''; ?>>
 							 Fruits
 						  </label>
 						</div>
