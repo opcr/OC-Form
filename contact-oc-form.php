@@ -1,4 +1,3 @@
-<!-- Ouverture d'une session et chargement d'un nouveau captcha-->
 <?php
 	session_start();
 	require'recaptcha.php';
