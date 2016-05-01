@@ -148,7 +148,7 @@
 						<label class="control-label" for="road">Rue <span class="glyphicon glyphicon-asterisk"></span></label>
 						<input name="road" id="road" class="form-control" type="text" required="required" autofocus placeholder="Votre rue" tabindex="1" title="Veuillez saisir votre rue" autocomplete="on" value="<?= isset($_SESSION['inputs']['road']) ? $_SESSION['inputs']['road'] : ''; ?>">
 
-						<input name="phone" id="phone" class="form-control" type="tel" placeholder="Votre numéro de téléphone" title="Veuillez saisir votre numéro de téléphone" autocomplete="on" value="<?= isset($_SESSION['inputs']['phone']) ? $_SESSION['inputs']['phone'] : ''; ?>">
+					
 
 					</div>
 					<!-- Champ:numero de rue avec la vérification qu'il est bien renseigné-->
@@ -189,7 +189,7 @@
 							<input name="website" id="website" class="form-control" type="url" placeholder="Votre site web" tabindex="5" title="Veuillez saisir votre site web si vous en avez un" autocomplete="on" value="<?= isset($_SESSION['inputs']['website']) ? $_SESSION['inputs']['website'] : ''; ?>">
 
 							
-					<input name="website" id="website" class="form-control" type="url" placeholder="Votre site web" title="Veuillez saisir votre site web si vous en avez un" autocomplete="on" value="<?= isset($_SESSION['inputs']['website']) ? $_SESSION['inputs']['website'] : ''; ?>">
+	
 
 						</div>
 					</div>
