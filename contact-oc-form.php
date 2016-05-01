@@ -20,7 +20,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+<!-- CSS-->
+	<link rel="stylesheet" href="css/boutons.css">
 	<!-- Affichage d'un nouveau captcha-->
 	 <?php echo $captcha->script(); ?>
 </head>
@@ -58,7 +59,7 @@
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Search">
 				</div>
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-default ">Submit</button>
 			</form>
 		</div>
 		<!-- /.navbar-collapse --> 
@@ -266,8 +267,8 @@
 				<!-- Boutons réinitialisation et validation-->
 				<div class="row">
 				<div class="col-xs-12 form-group">					
-				<button type="reset" class="pull-left btn btn-default">Réinitialiser</button>
-				<button type="submit" id="submit" class="pull-right btn btn-default">Envoyer</button>
+				<button type="reset" class="pull-left btn btn-default btn-shadow">Réinitialiser</button>
+				<button type="submit" id="submit" class="pull-right btn btn-default btn-shadow">Envoyer</button>
 				</div>
 				</div>
 			</form>

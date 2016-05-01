@@ -1,0 +1,25 @@
+
+.btn-round-little
+{	
+	
+	border: 0.1em solid lightgrey;
+	border-radius:50em;
+	 -webkit-border-radius: 50em;
+     -moz-border-radius: 50em;
+	-o-border-radius:50em;
+	height:75px;
+	
+}
+.btn-round-big
+{
+	border: 0.1em solid lightgrey;
+	border-radius:80em;
+	 -webkit-border-radius: 800em;
+     -moz-border-radius: 800em;
+	-o-border-radius:80em;
+	height:100px;
+}
+.btn-shadow
+{
+	box-shadow: 0.5em 0.5em lightgrey;
+}
