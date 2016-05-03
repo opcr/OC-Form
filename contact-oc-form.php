@@ -267,8 +267,8 @@
 				<!-- Boutons réinitialisation et validation-->
 				<div class="row">
 				<div class="col-xs-12 form-group">					
-				<button type="reset" class="pull-left btn  btn-btn-big">Réinitialiser</button>
-				<button type="submit" id="submit" class="pull-right  btn-inside ">Envoyer</button>
+				<button type="reset" class="pull-left btn  btn-inside">Réinitialiser</button>
+				<button type="submit" id="submit" class="pull-right btn btn-inside ">Envoyer</button>
 				</div>
 				</div>
 			</form>
