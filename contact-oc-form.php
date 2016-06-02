@@ -1,6 +1,16 @@
 <?php
+// CODE IMPORTANT À PLACER EN PREMIER SANS AUCUN AUTRE CODE QUELCONQUE AVANT. VEUILLEZ DONC À BIEN POSITIONNER L'OUVERTURE DE LA BALISE "<?php" À LA LIGNE 1 DU FICHIER CONTENANT VOTRE FORMULAIRE.
+	
+// "session_start();" EST UNE INSTRUCTION SERVANT À TRANSMÊTRE LES VALEURS DES CHAMPS DE FORMULAIRE LORS DE L'ENVOI DES DONNÉS POSTÉES.
 	session_start();
+	
+// "require'recaptcha.php';" SERT à IMPORTER LES DONNéES DU FICHIER "recaptcha.php", NéCéSSAIRES à L'INTéGRATION DU RECAPTCHA AU SEIN DU FORMULAIRE
+/** CELUI-CI SE CHARGE DE CONSTRUIRE LES ÉLÉMENTS TELS QUE LE CDN "<script src="https://www.google.com/recaptcha/api.js"></script>", À INTRODUIRE DANS LA BALISE <head> DU FORMULAIRE ET LE CODE HTML À L'INTéRIEUR DE LA BALISE "<div id="google-recaptcha">" CONTENANT LE CAPTCHA */
 	require'recaptcha.php';
+	
+// CETTE LIGNE CONTIENT LA CLéF DU SITE (SITEKEY) ET LA CLéF SECRèTE (PRIVATEKEY) AFIN DE VéRIFIER L'AUTENTICITé DU RECAPTCHA. VEUILLEZ à INTRODUIRE VOS CLÉS DANS L'ORDRE ENTRE LES APOSTROPHES. POUR PROCÉDER À L'OPTENTION DE CES CLÉS VEUILLEZ CONSULTER LA DOCUMENTATION Y FAISANT RÉFÉRENCE.
+	// $captcha = new Recaptcha('CLÉF DU SITE', 'CLÉF SECRÈTE'); 
+	// !!! MESSAGE À L'ATTENTION DU GROUPE OC-FORM, CETTE LIGNE CI-DESSUS RESTE EN COMMENTAIRE LE TEMPS DE LA PHASE DE TEST. UNE FOIS APROUVÉ, LA LIGNE CI-DESSOUS SERA AUSSI SUPPRIMÉE.
 	$captcha = new Recaptcha('6LeRqw4TAAAAACv2cu5bykspQ3leI2pycWGXkOO6', '6LeRqw4TAAAAAGq9G-4-ScUabLerK2RKDMiPQbRB');
 ?>
 <!DOCTYPE html>
@@ -21,8 +31,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-	<!-- Affichage d'un nouveau captcha-->
-	 <?php echo $captcha->script(); ?>
+	<!-- le code PHP ci-dessous sert à afficher la balise script contenant le cdn de Google reCaptcha généré par le fichier "recaptcha.php" -->
+	<?php echo $captcha->script(); ?>
 </head>
 
 <body>
@@ -68,34 +78,41 @@
 
 <!-- Contenu de page -->
 <section class="container">
-	
-	<!-- On cherche dans les données de la session si il existe un message d'erreur et s'il existe, on l'affiche-->
-	
+
+	<!-- ================================================================================================ -->
+										<!-- Container des messages d'erreur ou succès -->
+	<!-- ================================================================================================ -->
 	<div class="row">
 		<div class="col-xs-11 col-xs-centered col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+			
+			<!-- On cherche dans les données de la session si il existe un ou plusieurs message(s) d'erreur et s'il en existe, on l'affiche -->
+			<!-- Attention!!! Ne pas modifier le code ci-dessous -->
 			<?php if(array_key_exists('errors', $_SESSION)): ?>
 			<div class="alert alert-danger">
 				<? echo implode('<br>', $_SESSION['errors']); ?>
 			</div>
 			<?php endif; ?>
 	
-	<!--On cherche dans les données de la session s'il existe un message de réussite et si oui on confirme l'envoi du mail-->
+			<!-- On cherche dans les données de la session s'il existe un message de réussite et si oui on confirme l'envoi du mail -->
 			<?php if(array_key_exists('success', $_SESSION)): ?>
 				<div class="alert alert-success">
-					Votre email a bien été envoyé
+				<!-- Modifiez ci-dessous le message de confirmation si vous le désirez -->
+					<p>Votre email a bien été envoyé</p>
 				</div>
 			<?php endif; ?>
 		</div>
 	</div>
-	
+
+	<!-- ================================================================================================ -->
+										<!-- fin du Container des messages d'erreur ou succès -->
+	<!-- ================================================================================================ -->
 	
 	<div class="row">
-
 		<div class="col-xs-10 col-xs-offset-1 col-lg-8 col-lg-offset-2">
 			
-	<!--====================================================-->		
-	<!--Formulaire-->
-	<!--=====================================================-->
+	<!-- ================================================================================================ -->
+														<!-- Formulaire de contact -->
+	<!-- ================================================================================================ -->
 			
 			<h2>Formulaire</h2>
 			
@@ -104,7 +121,7 @@
 			<form id="formulaire" action="post_contact.php" method="post">
 				<div class="row">
 					
-					<!-- Civilités-->
+					<!-- Civilités -->
 					<!-- Boutons radio pour le choix de la civilité avec vérification du choix et réinjection de la valeur si le formulaire n'est pas soummis -->
 					<div class="col-xs-12 form-group">
 						<!-- Monsieur -->
@@ -121,19 +138,21 @@
 					<!-- Prénom et nom-->
 					<!-- Champ prénom avec la vérification qu'il est bien renseigné et réinjection de la valeur si le formulaire n'est pas soummis -->
 					<div class="col-xs-12 col-sm-6 form-group">
+						<!-- Prénom -->
 						<label class="control-label" for="firstname">Prénom <span class="glyphicon glyphicon-asterisk"></span></label>
 						<input name="firstname" id="firstname" class="form-control" type="text" required="required" placeholder="Votre Prénom" title="Veuillez saisir votre prénom" autocomplete="on" value="<?= isset($_SESSION['inputs']['firstname']) ? $_SESSION['inputs']['firstname'] : ''; ?>">
 					</div>
 					
 					<!-- Champ nom avec la vérification qu'il est bien renseigné et réinjection de la valeur si le formulaire n'est pas soummis -->
 					<div class="col-xs-12 col-sm-6 form-group">
+						<!-- Nom de famille -->
 						<label class="control-label" for="lastname">Nom <span class="glyphicon glyphicon-asterisk"></span></label>
 						<input name="lastname" id="lastname"class="form-control"  type="text" required="required" placeholder="Votre nom" title="Veuillez saisir votre nom" autocomplete="on" value="<?= isset($_SESSION['inputs']['lastname']) ? $_SESSION['inputs']['lastname'] : ''; ?>">
 					</div>
 				</div>
 				
 				
-				<!-- Champ coordonnées-->
+				<!-- Champs de coordonnées-->
 				<div class="row">
 					<!-- Champ : adresse mail avec la vérification qu'il est bien renseigné et réinjection de la valeur si le formulaire n'est pas soummis -->
 					<div class="col-xs-12 col-sm-6 form-group">
@@ -234,23 +253,29 @@
 					<div class="col-xs-12 col-sm-6 form-group">
 					
 					<!-- Menu déroulant avec les adresses mails des personnes à contacter-->	
-						<label class="control-label" for="service">Qui souhaitez-vous contacter ? <span class="glyphicon glyphicon-asterisk"></span></label>
-						<select class="form-control" name="destinataire" required id="destinataire">
+						<label class="control-label" for="service">Veuillez choisir un service<span class="glyphicon glyphicon-asterisk"></span></label>
+						<select class="form-control" name="service" required id="service">
 							<!-- Option de choix 1 désactivéé et selectionnée -->
-							<option disabled selected>choisissez...</option>
-							<option value="mailadmin" <?php if (isset($_SESSION['destinataire']) && $_SESSION['destinataire'] == "'.$mailadmin.'") echo "selected='selected'"; ?> >Administration</option>
-							<option value="mailservicevente" <?php if (isset($_SESSION['destinataire']) && $_SESSION['destinataire'] == "'.$mailservicevente.'") echo "selected='selected'"; ?> >Service après-vente</option>
-							<option value="mailinfo" <?= isset($_SESSION['inputs']['destinataire']) && $_SESSION['inputs']['destinataire'] == 'mailinfo' ? selected : ''; ?> >Informations</option>
+							<option value="" disabled>choisissez...</option>
+							<option value="0" <?= isset($_SESSION['inputs']['service']) && $_SESSION['inputs']['service'] == '0' ? selected : ''; ?> >Administration</option>
+							<option value="1" <?= isset($_SESSION['inputs']['service']) && $_SESSION['inputs']['service'] == '1' ? selected : ''; ?> >Service après-vente</option>
+							<option value="2" <?= isset($_SESSION['inputs']['service']) && $_SESSION['inputs']['service'] == '2' ? selected : ''; ?> >Infos</option>
 						</select>
 					</div>
 				</div>
 				
 				<!--Champ message avec la vérification du champ-->
 				<div class="row">
-				<div class="col-xs-12 form-group">
-				<label class="control-label" for="message">Message <span class="glyphicon glyphicon-asterisk"></span></label>
-				<textarea name="message" rows="10" required class="form-control" id="message" placeholder="Indiquez-nous votre requête ici" tabindex="4" title="Veuillez saisir votre message"><?= isset($_SESSION['inputs']['message']) ? $_SESSION['inputs']['message'] : ''; ?></textarea>
-				</div>
+					<div class="col-xs-12 form-group">
+						<!-- Prénom -->
+						<label class="control-label" for="sujet">Sujet <span class="glyphicon glyphicon-asterisk"></span></label>
+						<input name="sujet" id="sujet" class="form-control" type="text" required="required" placeholder="Veuillez saisir le sujet du message" title="Veuillez saisir le sujet du message" autocomplete="on" value="<?= isset($_SESSION['inputs']['sujet']) ? $_SESSION['inputs']['sujet'] : ''; ?>">
+					</div>
+
+					<div class="col-xs-12 form-group">
+					<label class="control-label" for="message">Message <span class="glyphicon glyphicon-asterisk"></span></label>
+					<textarea name="message" rows="10" required class="form-control" id="message" placeholder="Indiquez-nous votre requête ici" tabindex="4" title="Veuillez saisir votre message"><?= isset($_SESSION['inputs']['message']) ? $_SESSION['inputs']['message'] : ''; ?></textarea>
+					</div>
 				</div>
 				
 				
@@ -272,8 +297,9 @@
 				</div>
 			</form>
 		</div>
+
 	<!-- Elements cachés à utiliser pour débugger--> 
-	<div class="col-xs-12 hidden">
+	<div class="col-xs-12">
 	<h2>Debug</h2>
 	<!-- affichage des variables de la session-->	
 	<?php

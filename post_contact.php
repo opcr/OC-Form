@@ -3,7 +3,7 @@
 $mailservicevente = 'service-vente@dvwdesign.ch';
 $mailinfo = 'info@dvwdesign.ch';
 */
-
+$mailto = ['admin@dvwdesign.ch', 'service@dvwdesign.ch', 'info@dvwdesign.ch'];
 
 // TABLEAU DES MESSAGES D'ERREUR
 $errors = [];
@@ -42,11 +42,17 @@ if(!array_key_exists('alimentation', $_POST) || $_POST['alimentation'] == ''){
 	$errors['alimentation'] = "Veuillez entrer votre alimentation";
 }
 
-// SI LE MESSAGE N'EST PAS RENSEIGNE --> MESSAGE D'ERREUR
-if(!array_key_exists('destinataire', $_POST) || !isset($_POST['destinataire'])){
+// SI LE SERVICE DEMANDÉ N'EST PAS CHOISIS OU ERRONÉ --> MESSAGE D'ERREUR
+if(!array_key_exists('service', $_POST) || !isset($mailto[$_POST['service']])){
 	$errors['destinataire'] = "Veuillez choisir le service à contacter";
 }
 
+// SI LE SUJET N'EST PAS RENSEIGNÉ --> MESSAGE D'ERREUR
+if(!array_key_exists('sujet', $_POST) || $_POST['sujet'] == ''){
+	$errors['sujet'] = "Veuillez saisir la raison de votre contact";
+}
+
+//SI LE MESSAGE N'EST PAS RENSEIGNÉ --> MESSAGE D'ERREUR
 if(!array_key_exists('message', $_POST) || $_POST['message'] == ''){
 	$errors['message'] = "Veuillez saisir un message";
 }
@@ -68,10 +74,15 @@ if(!empty($errors)){
 else{
 	header('location: contact-oc-form.php');
 	$_SESSION['success'] = 1;
-	$mailto = $_POST['destinataire'];
+// Construction du contenu de l'email
+	foreach($_POST as $nomVar => $val){
+		if ($nomVar!="service" AND $nomVar!="sujet" AND $nomVar!="g-recaptcha-response"){
+		$contentmsg .= $nomVar." : ".stripslashes($val)."\r\n";
+		}
+	}
 	
-	//ADRESSE MAIL QUE VOUS SOUHAITEZ:
-	//$mailto = 'info@dvwdesign.ch';
+	
+	//TRAITEMENT DES CHAMPS DU FORMULAIRE:
 	$civilite = $_POST['civilite'];
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
@@ -80,12 +91,13 @@ else{
 	$roadnumber = $_POST['roadnumber'];
 	$road = $_POST['road'];
 	$codepostal = $_POST['codepostal'];
+	$city = $_POST['city'];
 	$color = $_POST['color'];
    $alimentation = $_POST['alimentation'];
-	$city = $_POST['city'];
+	$sujet = $_POST['sujet'];
 	$message = $_POST['message'];
-	$headers = "From: $civilite \"$firstname $lastname\" <$adressmail>\r\n";
+	$headers = "From: \"$firstname $lastname\" <$adressmail>\r\n";
 	$headers .="Reply-To: $adressmail";
-   mail($mailto, 'Formulaire de contact OC-Form', $message, $headers);
+   mail($mailto[$_POST['service']], $sujet, $contentmsg, $headers);
 }
 ?>
