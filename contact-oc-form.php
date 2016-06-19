@@ -220,21 +220,21 @@
 						<div class="checkbox">
 							<!-- case à cocher viande avec réinjection de la valeur si le formulaire n'est pas soummis -->
 							<label>
-								<input type="checkbox" name="alimentation" value="Viande" <?= isset($_SESSION['inputs']['alimentation']) && $_SESSION['inputs']['alimentation'] == 'Viande' ? checked : ''; ?>>
+								<input type="checkbox" name="alimentation[]" value="Viande" <?= isset($_SESSION['inputs']['alimentation']) && $_SESSION['inputs']['alimentation'] == 'Viande' ? checked : ''; ?>>
 								Viande
 							</label>
 						</div>
 						<div class="checkbox">
 						<!-- case à cocher viande avec réinjection de la valeur si le formulaire n'est pas soummis -->
 						<label>
-							<input type="checkbox" name="alimentation" value="Legumes" <?= isset($_SESSION['inputs']['alimentation']) && $_SESSION['inputs']['alimentation'] == 'Legumes' ? checked : ''; ?>>
+							<input type="checkbox" name="alimentation[]" value="Legumes" <?= isset($_SESSION['inputs']['alimentation']) && $_SESSION['inputs']['alimentation'] == 'Legumes' ? checked : ''; ?>>
 								légumes
 							</label>
 						</div>
 						<div class="checkbox">
 							<!-- case à cocher viande avec réinjection de la valeur si le formulaire n'est pas soummis -->
 							<label>
-								<input type="checkbox" name="alimentation" value="Fruits" <?= isset($_SESSION['inputs']['alimentation']) && $_SESSION['inputs']['alimentation'] == 'Fruits' ? checked : ''; ?>>
+								<input type="checkbox" name="alimentation[]" value="Fruits" <?= isset($_SESSION['inputs']['alimentation']) && $_SESSION['inputs']['alimentation'] == 'Fruits' ? checked : ''; ?>>
 								Fruits
 							</label>
 						</div>

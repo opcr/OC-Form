@@ -1,33 +1,33 @@
 <?php
-/*$mailadmin = 'admin@dvwdesign.ch';
-$mailservicevente = 'service-vente@dvwdesign.ch';
-$mailinfo = 'info@dvwdesign.ch';
-*/
+// TABLEAU DES ADRESSES MAILS D'ENVOI (CHAMP SELECT DU FORMULAIRE)
 $mailto = ['admin@dvwdesign.ch', 'service@dvwdesign.ch', 'info@dvwdesign.ch'];
+
 
 // TABLEAU DES MESSAGES D'ERREUR
 $errors = [];
 
 //SI RIEN N'EST RENSEIGNE AU NIVEAU DU CIVILITE--> MESSAGE D'ERREUR
-
 if(!array_key_exists('civilite', $_POST) || $_POST['civilite'] == ''){
 	$errors['civilite'] = "Veuillez spécifier votre \"Civilité\"";
 }
 
 //SI RIEN N'EST RENSEIGNE AU NIVEAU DU PRENOM--> MESSAGE D'ERREUR
-
 if(!array_key_exists('firstname', $_POST) || $_POST['firstname'] == ''){
 	$errors['firstname'] = "Veuillez saisir votre prénom";
 }
+elseif(preg_match("#[^A-Za-z\s-]#", $_POST['firstname'])){
+	$errors['firstname'] = "Veuillez saisir uniquement des caractères alphabétiques";
+}
 
 //SI RIEN N'EST RENSEIGNE AU NIVEAU DU NOM DE FAMILLE--> MESSAGE D'ERREUR
-
 if(!array_key_exists('lastname', $_POST) || $_POST['lastname'] == ''){
 	$errors['lastname'] = "Veuillez saisir votre nom de famille";
 }
+elseif(preg_match("#[^A-Za-z\s-]#", $_POST['lastname'])){
+	$errors['lastname'] = "Veuillez saisir uniquement des caractères alphabétiques";
+}
 
 //SI RIEN N EST RENSEIGNE AU NIVEAU DE L'ADRESSE MAIL OU SI ELLE N'EST PAS VALIDE--> MESSAGE D'ERREUR
-
 if(!array_key_exists('adressmail', $_POST) || $_POST['adressmail'] == '' || !filter_var($_POST['adressmail'], FILTER_VALIDATE_EMAIL)){
 	$errors['adressmail'] = "Veuillez saisir un e-mail valide";
 }
@@ -37,7 +37,7 @@ if(!array_key_exists('phone', $_POST) || $_POST['phone'] == ''){
 	$errors['phone'] = "Veuillez saisir votre numéro de téléphone";
 }
 
-
+// SI UNE CASE N'EST PAS COCHÉE --> MESSAGE D'ERREUR
 if(!array_key_exists('alimentation', $_POST) || $_POST['alimentation'] == ''){
 	$errors['alimentation'] = "Veuillez entrer votre alimentation";
 }
@@ -57,23 +57,26 @@ if(!array_key_exists('message', $_POST) || $_POST['message'] == ''){
 	$errors['message'] = "Veuillez saisir un message";
 }
 // SI LE RECAPTCHA N'EST PAS RENSEIGNE OU S'IL EST MAL RENSEIGNE --> MESSAGE D'ERREUR
-if(!array_key_exists('g-recaptcha-response', $_POST) || $_POST['g-recaptcha-response'] == false){
+/*if(!array_key_exists('g-recaptcha-response', $_POST) || $_POST['g-recaptcha-response'] == false){
 	$errors['g-recaptcha-response'] = "Veuillez valider le captcha";
-}
+}*/
 
 // ON DEMARRE UNE SESSION
 session_start();
 
-// S'IL Y A DES ERREURS, ON AFFICHE LES MESSAGES D'ERREURS DEFINIS PRECEDEMMENT
+// À LA SOUMMISSION DU FORMULAIRE ON RENVOIE LE VISITEUR SUR LA PAGE DU FORMULAIRE
+//S'IL Y A DES ERREURS($_SESSION['errors']), ON AFFICHE LES MESSAGES D'ERREURS DEFINIS PRECEDEMMENT. SI DES CHAMPS AVAIENT ÉTÉ CORRECTEMENT REMPLIS, CEUX-CI RETROUVERONT LES VALEURS SAISIES AUPARAVANT ($_SESSION['INPUTS']).
 if(!empty($errors)){
 	header('location: contact-oc-form.php');
 	$_SESSION['errors'] = $errors;
 	$_SESSION['inputs'] = $_POST;
 }
-//SINON ON ENVOIE UN MAIL A L'ADRESSE QUE VOUS INDIQUEZ
+//SINON ON ENVOIE LE VISITEUR SUR LA PAGE DU FORMULAIRE AVEC UN MESSAGE DE SUCCES.
 else{
 	header('location: contact-oc-form.php');
-	$_SESSION['success'] = 1;
+	$_SESSION['success'] = 1;	
+	
+	
 // Construction du contenu de l'email
 	foreach($_POST as $nomVar => $val){
 		if ($nomVar!="service" AND $nomVar!="sujet" AND $nomVar!="g-recaptcha-response"){
@@ -81,6 +84,14 @@ else{
 		}
 	}
 	
+	
+	// GROUPE DE CASES à COCHER
+	if(empty($_POST['alimentation'])){
+		foreach($_POST['alimentation'] as $nomVar => $val){ 
+			$alimentation = $_POST['alimentation'];						
+		}
+	}
+
 	
 	//TRAITEMENT DES CHAMPS DU FORMULAIRE:
 	$civilite = $_POST['civilite'];
@@ -93,11 +104,11 @@ else{
 	$codepostal = $_POST['codepostal'];
 	$city = $_POST['city'];
 	$color = $_POST['color'];
-   $alimentation = $_POST['alimentation'];
 	$sujet = $_POST['sujet'];
 	$message = $_POST['message'];
 	$headers = "From: \"$firstname $lastname\" <$adressmail>\r\n";
 	$headers .="Reply-To: $adressmail";
+	//Organisation des informations d'envoi
    mail($mailto[$_POST['service']], $sujet, $contentmsg, $headers);
 }
 ?>
