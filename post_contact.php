@@ -57,9 +57,9 @@ if(!array_key_exists('message', $_POST) || $_POST['message'] == ''){
 	$errors['message'] = "Veuillez saisir un message";
 }
 // SI LE RECAPTCHA N'EST PAS RENSEIGNE OU S'IL EST MAL RENSEIGNE --> MESSAGE D'ERREUR
-if(!array_key_exists('g-recaptcha-response', $_POST) || $_POST['g-recaptcha-response'] == false){
+/*if(!array_key_exists('g-recaptcha-response', $_POST) || $_POST['g-recaptcha-response'] == false){
 	$errors['g-recaptcha-response'] = "Veuillez valider le captcha";
-}
+}*/
 
 // ON DEMARRE UNE SESSION
 session_start();
@@ -77,13 +77,7 @@ else{
 	$_SESSION['success'] = 1;	
 	
 	
-// GROUPE DE CASES à COCHER
-		/*echo 'Votre alimentation: <br/>';
-		$alimentationcheckbox = $_POST['alimentation'];
-		foreach($alimentationcheckbox as $alimentation){
-			echo $alimentation.'<br/>';
-		}*/
-	
+//TRAITEMENT DU FORULAIRE POUR ENVOI
 // Construction du contenu de l'email
 	foreach($_POST as $nomVar => $val){
 		if ($nomVar!="service" AND $nomVar!="sujet" AND $nomVar!="g-recaptcha-response"){
@@ -104,7 +98,7 @@ else{
 	$road = $_POST['road'];
 	$codepostal = $_POST['codepostal'];
 	$city = $_POST['city'];
-	$alimentation = implode($_POST['alimentation'], ',');
+	$alimentation = implode($_POST['alimentation'] ."\r\n");
 	$color = $_POST['color'];
 	$sujet = $_POST['sujet'];
 	$headers = "From: \"$firstname $lastname\" <$adressmail>\r\n";
