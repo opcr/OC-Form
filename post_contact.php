@@ -78,11 +78,11 @@ else{
 	
 	
 // GROUPE DE CASES à COCHER
-		echo 'Votre alimentation: <br/>';
-		$alimentation = $_POST['alimentation'];
-		foreach($alimentation as $key => $value){
-			echo $value.'<br/>';
-		}
+		/*echo 'Votre alimentation: <br/>';
+		$alimentationcheckbox = $_POST['alimentation'];
+		foreach($alimentationcheckbox as $alimentation){
+			echo $alimentation.'<br/>';
+		}*/
 	
 // Construction du contenu de l'email
 	foreach($_POST as $nomVar => $val){
@@ -104,7 +104,7 @@ else{
 	$road = $_POST['road'];
 	$codepostal = $_POST['codepostal'];
 	$city = $_POST['city'];
-	$alimentation = $alimentation_values."\r\n";
+	$alimentation = implode($_POST['alimentation'], ',');
 	$color = $_POST['color'];
 	$sujet = $_POST['sujet'];
 	$headers = "From: \"$firstname $lastname\" <$adressmail>\r\n";
