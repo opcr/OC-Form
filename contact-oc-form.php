@@ -166,9 +166,22 @@
 						<input name="phone" id="phone" class="form-control" type="tel" placeholder="Votre numéro de téléphone" tabindex="4" title="Veuillez saisir votre numéro de téléphone" autocomplete="on" value="<?= isset($_SESSION['inputs']['phone']) ? $_SESSION['inputs']['phone'] : ''; ?>">
 					</div>
 					
+<<<<<<< HEAD
 					
 					<!-- Adresse Postale-->
 					<!-- Champ:numero de rue avec la vérification qu'il est bien renseigné et réinjection de la valeur si le formulaire n'est pas soummis -->
+=======
+					<!-- Adresse-->
+					<!-- Champ:nom de rue avec la vérification qu'il est bien renseigné-->
+					<div class="col-xs-8 col-sm-4 form-group">
+						<label class="control-label" for="road">Rue <span class="glyphicon glyphicon-asterisk"></span></label>
+						<input name="road" id="road" class="form-control" type="text" required="required" autofocus placeholder="Votre rue" tabindex="1" title="Veuillez saisir votre rue" autocomplete="on" value="<?= isset($_SESSION['inputs']['road']) ? $_SESSION['inputs']['road'] : ''; ?>">
+
+					
+
+					</div>
+					<!-- Champ:numero de rue avec la vérification qu'il est bien renseigné-->
+>>>>>>> origin/master
 					<div class="col-xs-4 col-sm-2 form-group">
 						<label class="control-label" for="roadnumber">N°<span class="glyphicon glyphicon-asterisk"></span></label>
 						<input name="roadnumber" id="roadnumber" class="form-control" type="text" required="required" placeholder="N°" title="Veuillez saisir le numéro de votre immeuble" autocomplete="on" value="<?= isset($_SESSION['inputs']['roadnumber']) ? $_SESSION['inputs']['roadnumber'] : ''; ?>">
@@ -208,6 +221,13 @@
 							<span class="input-group-addon">http://</span>
 							<!-- input "#website" -->
 							<input name="website" id="website" class="form-control" type="url" placeholder="Votre site web" tabindex="5" title="Veuillez saisir votre site web si vous en avez un" autocomplete="on" value="<?= isset($_SESSION['inputs']['website']) ? $_SESSION['inputs']['website'] : ''; ?>">
+<<<<<<< HEAD
+=======
+
+							
+	
+
+>>>>>>> origin/master
 						</div>
 					</div>
 				</div>
