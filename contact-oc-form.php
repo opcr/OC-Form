@@ -88,9 +88,9 @@
 			<!-- On cherche dans les données de la session si il existe un ou plusieurs message(s) d'erreur et s'il en existe, on l'affiche -->
 			<!-- Attention!!! Ne pas modifier le code ci-dessous -->
 			<?php if(array_key_exists('errors', $_SESSION)): ?>
-			<div class="alert alert-danger">
-				<? echo implode('<br>', $_SESSION['errors']); ?>
-			</div>
+				<div class="alert alert-danger">
+					<? echo implode('<br>', $_SESSION['errors']); ?>
+				</div>
 			<?php endif; ?>
 	
 			<!-- On cherche dans les données de la session s'il existe un message de réussite et si oui on confirme l'envoi du mail -->
@@ -218,21 +218,21 @@
 					<div class="col-xs-6">
 						<p><strong>Quelle est votre alimentation ?</strong></p>
 						<div class="checkbox">
-							<!-- case à cocher viande avec réinjection de la valeur si le formulaire n'est pas soummis -->
+							<!-- case à cocher Viande avec réinjection de la valeur si le formulaire n'est pas soummis -->
 							<label>
 								<input type="checkbox" name="alimentation[]" value="Viande" <?= isset($_SESSION['inputs']['alimentation']) && $_SESSION['inputs']['alimentation'] == 'Viande' ? checked : ''; ?>>
 								Viande
 							</label>
 						</div>
 						<div class="checkbox">
-						<!-- case à cocher viande avec réinjection de la valeur si le formulaire n'est pas soummis -->
+						<!-- case à cocher légumes avec réinjection de la valeur si le formulaire n'est pas soummis -->
 						<label>
 							<input type="checkbox" name="alimentation[]" value="Legumes" <?= isset($_SESSION['inputs']['alimentation']) && $_SESSION['inputs']['alimentation'] == 'Legumes' ? checked : ''; ?>>
 								légumes
 							</label>
 						</div>
 						<div class="checkbox">
-							<!-- case à cocher viande avec réinjection de la valeur si le formulaire n'est pas soummis -->
+							<!-- case à cocher Fruits avec réinjection de la valeur si le formulaire n'est pas soummis -->
 							<label>
 								<input type="checkbox" name="alimentation[]" value="Fruits" <?= isset($_SESSION['inputs']['alimentation']) && $_SESSION['inputs']['alimentation'] == 'Fruits' ? checked : ''; ?>>
 								Fruits
@@ -241,18 +241,18 @@
 					</div>
 					<div class="col-xs-6 form-group">
 						<!-- choix de la couleur sur une tablette avec la vérification de type "color§" HTML et réinjection de la valeur si le formulaire n'est pas soummis -->
-					<!-- Champ:nom de site web  -->
+					<!-- Champ:nom de site web -->
 						<label class="visible-xs-block visible-sm-block visible-md-block visible-lg-block" for="color">Quelle est votre couleur préférée ?</label>
 						<input name="color" id="color" type="color" value="<?= isset($_SESSION['inputs']['color']) ? $_SESSION['inputs']['color'] : ''; ?>">
 					</div>					
 				</div>
 				
 				
-				<!-- Champ de contact-->
+				<!-- Champ de contact -->
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 form-group">
 					
-					<!-- Menu déroulant avec les adresses mails des personnes à contacter-->	
+					<!-- Menu déroulant avec les différents services de contact. Les adresses mails seront attribuées au travers du tableau $mailto[] dans le fichier "post_contact.php" -->	
 						<label class="control-label" for="service">Veuillez choisir un service<span class="glyphicon glyphicon-asterisk"></span></label>
 						<select class="form-control" name="service" required id="service">
 							<!-- Option de choix 1 désactivéé et selectionnée -->
@@ -264,14 +264,15 @@
 					</div>
 				</div>
 				
-				<!--Champ message avec la vérification du champ-->
+				<!-- Champs: sujet et message de l'e-mail. -->
 				<div class="row">
 					<div class="col-xs-12 form-group">
-						<!-- Prénom -->
+						<!-- Champ:sujet du message avec la vérification qu'il est bien renseigné et réinjection de la valeur si le formulaire n'est pas soummis. Ce texte s'insère dans l'emplacement réservé à cet effet dans les e-mails. -->
 						<label class="control-label" for="sujet">Sujet <span class="glyphicon glyphicon-asterisk"></span></label>
 						<input name="sujet" id="sujet" class="form-control" type="text" required="required" placeholder="Veuillez saisir le sujet du message" title="Veuillez saisir le sujet du message" autocomplete="on" value="<?= isset($_SESSION['inputs']['sujet']) ? $_SESSION['inputs']['sujet'] : ''; ?>">
 					</div>
-
+					
+					<!-- Champ:message avec la vérification qu'il est bien renseigné et réinjection de la valeur si le formulaire n'est pas soummis. -->
 					<div class="col-xs-12 form-group">
 					<label class="control-label" for="message">Message <span class="glyphicon glyphicon-asterisk"></span></label>
 					<textarea name="message" rows="10" required class="form-control" id="message" placeholder="Indiquez-nous votre requête ici" tabindex="4" title="Veuillez saisir votre message"><?= isset($_SESSION['inputs']['message']) ? $_SESSION['inputs']['message'] : ''; ?></textarea>
@@ -279,33 +280,33 @@
 				</div>
 				
 				
-				<!-- Validation / remise à zero-->
+				<!-- Affichage de google reCaptcha version 2 -->
 				
 				<div class="row">
-				<div class="col-xs-12 form-group">
-				<div id="google-recaptcha">
-				<?php echo $captcha->html(); ?>
-				</div>
-				</div>
+					<div class="col-xs-12 form-group">
+						<div id="google-recaptcha">
+							<?php echo $captcha->html(); ?>
+						</div>
+					</div>
 				</div>
 				<!-- Boutons réinitialisation et validation-->
 				<div class="row">
-				<div class="col-xs-12 form-group">					
-				<button type="reset" class="pull-left btn btn-default">Réinitialiser</button>
-				<button type="submit" id="submit" class="pull-right btn btn-default">Envoyer</button>
-				</div>
+					<div class="col-xs-12 form-group">					
+						<button type="reset" class="pull-left btn btn-default">Réinitialiser</button>
+						<button type="submit" id="submit" class="pull-right btn btn-default">Envoyer</button>
+					</div>
 				</div>
 			</form>
 		</div>
 
-	<!-- Elements cachés à utiliser pour débugger--> 
-	<div class="col-xs-12">
-	<h2>Debug</h2>
-	<!-- affichage des variables de la session-->	
-	<?php
-	echo var_dump($_SESSION);
-	?>
-	</div>
+		<!-- Elements cachés à utiliser pour débugger. Cette div sera supprimée lors de la phase de production --> 
+		<div class="col-xs-12">
+			<h2>Debug</h2>
+			<!-- affichage des variables de la session -->	
+			<?php
+				echo var_dump($_SESSION);
+			?>
+		</div>
 	</div>
 </section>
 	
