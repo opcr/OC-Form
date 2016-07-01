@@ -15,16 +15,10 @@ if(!array_key_exists('civilite', $_POST) || $_POST['civilite'] == ''){
 if(!array_key_exists('firstname', $_POST) || $_POST['firstname'] == ''){
 	$errors['firstname'] = "Veuillez saisir votre prénom";
 }
-elseif(preg_match("#[^[:alpha:]\s'-]#", $_POST['firstname'])){
-	$errors['firstname'] = "Veuillez saisir uniquement des caractères alphabétiques";
-}
 
 //SI RIEN N'EST RENSEIGNE AU NIVEAU DU NOM DE FAMILLE--> MESSAGE D'ERREUR
 if(!array_key_exists('lastname', $_POST) || $_POST['lastname'] == ''){
 	$errors['lastname'] = "Veuillez saisir votre nom de famille";
-}
-elseif(preg_match("#[^[:alpha:]\s'-]#", $_POST['firstname'])){
-	$errors['lastname'] = "Veuillez saisir uniquement des caractères alphabétiques";
 }
 
 //SI RIEN N EST RENSEIGNE AU NIVEAU DE L'ADRESSE MAIL OU SI ELLE N'EST PAS VALIDE--> MESSAGE D'ERREUR
@@ -78,17 +72,15 @@ else{
 	
 	
 //TRAITEMENT DU FORULAIRE POUR ENVOI
-// Construction du contenu de l'email
-	foreach($_POST as $nomVar => $val){
-		if ($nomVar!="service" AND $nomVar!="sujet" AND $nomVar!="g-recaptcha-response"){
-		$contentmsg .= $nomVar." : ".stripslashes($val)."\r\n";
-		}
-	}
 	
 	
-	//TRAITEMENT DES CHAMPS DU FORMULAIRE:
+	//LISTE DES VARIABLES DES CHAMPS DU FORMULAIRE:
+	
+	// Champs principaux du mail
+	$sujet = $_POST['sujet'];
 	$message = $_POST['message'];
-	//informations personnelles du client.
+	
+	//informations complémentaires ou personnelles du client.
 	$civilite = $_POST['civilite'];
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
@@ -98,11 +90,49 @@ else{
 	$road = $_POST['road'];
 	$codepostal = $_POST['codepostal'];
 	$city = $_POST['city'];
-	$alimentation = implode($_POST['alimentation'] ."\r\n");
 	$color = $_POST['color'];
-	$sujet = $_POST['sujet'];
+	
+	
+	// Le tableau $_POST['alimentation'] contient les valeurs des checkbox cochées. Le choix de valeurs multiples nécéssite l'utilisation d'un "foreach".
+	foreach($_POST['alimentation'] as $aliments)
+	{
+   	echo "$aliments".$retour_ligne;
+	}
+	
+	// headers du mail
 	$headers = "From: \"$firstname $lastname\" <$adressmail>\r\n";
 	$headers .="Reply-To: $adressmail";
+	// Construction du mail
+	
+	/* Petits points important lors de la construction de l'e-mail:
+	1 " $retour_ligne = "\n"; " pour les retours à la ligne dans l'e-mail et " $retour_paragraphe = "\r\n\r\n"; " procéde à un double retour à la ligne provocant une mise en forme d'un nouveau paragraphe à la suite.
+	2 Evitez les indentations pour qu'elles ne se répercutent pas sur le contenu de votre e-mail.*/
+	
+	// Déclaration des la variables de retour à la ligne et paragraphe
+	$retour_ligne = "\n";
+	$retour_paragraphe = "\r\n\r\n";
+	
+	//construction du tableau des données complémentaires
+	$complementarydata = "Tableau de données complémentaires:".$retour_ligne;
+	$complementarydata .="Civilité: $civilite".$retour_ligne;
+	$complementarydata .="Prénom: $firstname".$retour_ligne; 
+	$complementarydata .="Nom de famille: $lastname".$retour_ligne; 
+	$complementarydata .="Adresse e-mail: $adressmail".$retour_ligne; 
+	$complementarydata .="N° de téléphonne: $phone".$retour_ligne;
+	$complementarydata .="N° de la rue: $roadnumber".$retour_ligne;  
+	$complementarydata .="Adresse: $road".$retour_ligne; 
+	$complementarydata .="Code Postal: $codepostal".$retour_ligne; 
+	$complementarydata .="Ville: $city".$retour_ligne; 
+	$complementarydata .="Alimentation: $aliment".$retour_ligne; 
+	$complementarydata .="Couleur préférée: $color".$retour_ligne; 
+	
+	
+	// Construction du message de l'email
+	$contentmsg = "Message reçu:".$retour_ligne;
+	$contentmsg .= $message.$retour_paragraphe;
+	$contentmsg .= $complementarydata;
+
+
 	//Organisation des informations d'envoi
    mail($mailto[$_POST['service']], $sujet, $contentmsg, $headers);
 }
