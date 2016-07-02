@@ -15,10 +15,18 @@ if(!array_key_exists('civilite', $_POST) || $_POST['civilite'] == ''){
 if(!array_key_exists('firstname', $_POST) || $_POST['firstname'] == ''){
 	$errors['firstname'] = "Veuillez saisir votre prénom";
 }
-
+// SI DES CARACTÈRES NON ALPHABETIQUES SONT SAISIS, (SAUF EXCEPTIONS AUTORISÉES: espaces, trait d'union, appostrophes) --> MESSAGE D'ERREUR
+elseif(preg_match('~[^[:alpha:]\s-]~u', $_POST['firstname'])){
+    $errors['firstname'] = "Veuillez saisir uniquement des caractères alphabétiques";
+}
 //SI RIEN N'EST RENSEIGNE AU NIVEAU DU NOM DE FAMILLE--> MESSAGE D'ERREUR
 if(!array_key_exists('lastname', $_POST) || $_POST['lastname'] == ''){
 	$errors['lastname'] = "Veuillez saisir votre nom de famille";
+}
+// SI DES CARACTÈRES NON ALPHABETIQUES SONT SAISIS, (SAUF EXCEPTIONS AUTORISÉES: espaces, trait d'union, appostrophes) --> MESSAGE D'ERREUR
+
+elseif(preg_match('~[^[:alpha:]\s-]~u', $_POST['lastname'])){
+    $errors['lastname'] = "Veuillez saisir uniquement des caractères alphabétiques";
 }
 
 //SI RIEN N EST RENSEIGNE AU NIVEAU DE L'ADRESSE MAIL OU SI ELLE N'EST PAS VALIDE--> MESSAGE D'ERREUR
