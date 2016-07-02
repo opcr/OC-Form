@@ -93,15 +93,18 @@ else{
 	$color = $_POST['color'];
 	
 	
-	// Le tableau $_POST['alimentation'] contient les valeurs des checkbox cochées. Le choix de valeurs multiples nécéssite l'utilisation d'un "foreach".
-	foreach($_POST['alimentation'] as $aliments)
-	{
-   	echo "$aliments".$retour_ligne;
+	// Traitement de champs particuliers
+	/* $_POST['alimentation'] contient les valeurs des checkbox cochées. Le traitement de valeurs multiples associées à un groupe nécéssite l'utilisation d'un "foreach". Comme vous l'avez constaté, l'attribut "name" des checkbox du groupe "alimentation" est suivi de 2crochets (name="alimentation[]"). Celà signifie que les valeurs atribuées seront stockées dans un tableau. Le "foreach" est une fonction PHP qui permet de parcourir un tableau. L'objectif est de passer en "boucle" le tableau créé par les checkbox ayant pour atribut name "alimentation[]" */
+	$aliment = '';
+	foreach($_POST['alimentation'] as $aliments) {
+		$aliment.= $aliments.', ';
 	}
 	
 	// headers du mail
 	$headers = "From: \"$firstname $lastname\" <$adressmail>\r\n";
 	$headers .="Reply-To: $adressmail";
+	
+	
 	// Construction du mail
 	
 	/* Petits points important lors de la construction de l'e-mail:
@@ -112,7 +115,7 @@ else{
 	$retour_ligne = "\n";
 	$retour_paragraphe = "\r\n\r\n";
 	
-	//construction du tableau des données complémentaires
+	//construction du tableau des données complémentaires.
 	$complementarydata = "Tableau de données complémentaires:".$retour_ligne;
 	$complementarydata .="Civilité: $civilite".$retour_ligne;
 	$complementarydata .="Prénom: $firstname".$retour_ligne; 
