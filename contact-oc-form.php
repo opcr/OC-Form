@@ -113,7 +113,7 @@
 	<!-- ================================================================================================ -->
 														<!-- Formulaire de contact -->
 	<!-- ================================================================================================ -->
-	<h2>Formulaire de Contact</h2>
+<h2>Formulaire</h2>
 	<!-- Le formulaire sera géré par le fichier post_contact.php-->
 			
 			<form id="formulaire" action="post_contact.php" method="post">
